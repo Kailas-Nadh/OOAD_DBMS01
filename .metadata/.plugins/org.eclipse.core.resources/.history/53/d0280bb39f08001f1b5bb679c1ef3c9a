@@ -1,0 +1,18 @@
+package com.ilp03.entity;
+
+public class Hotels {
+	
+	private int hotelID;
+	private String hotelName;
+	private String location;
+	
+	public Hotels(int hotelID, String hotelName, String location) {
+		this.hotelID = hotelID;
+		this.hotelName = hotelName;
+		this.location = location;
+	}
+	
+	
+	
+
+}

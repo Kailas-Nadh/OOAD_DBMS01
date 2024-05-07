@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;com.ilp03.entity.Amount&apos; to &apos;FineRD&apos;&#x0D;&#x0A;- Original project: &apos;ILP_03_OOP_Assignment_v1.1&apos;&#x0D;&#x0A;- Original element: &apos;com.ilp03.entity.Amount&apos;&#x0D;&#x0A;- Renamed element: &apos;com.ilp03.entity.FineRD&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Amount&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;com.ilp03.entity{Amount.java[Amount" matchStrategy="1" name="FineRD" qualified="false" references="true" similarDeclarations="false" stamp="1714360120446" textual="false" version="1.0"/>
+</session>

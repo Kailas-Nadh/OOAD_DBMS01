@@ -1,0 +1,18 @@
+package com.ilp03.entity;
+
+public class RecurringDeposit extends Deposit {
+
+	@Override
+	public void calculateInterest(double principal, double rateOfInterest, int maturePeriod) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void calculateInterest(double installmentAmount, int frequencyOfPayment, double rateOfInterest,
+			int maturePeriod) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

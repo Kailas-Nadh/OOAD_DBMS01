@@ -1,0 +1,28 @@
+package com.ilp03.entity;
+
+public class Departments {
+	private int DepartmentId;
+	private String departmentName;
+
+	public Departments(int DepartmentId, String departmentName) {
+		this.DepartmentId = DepartmentId;
+		this.departmentName = departmentName;
+	}
+
+	public int getDepartmentId() {
+		return DepartmentId;
+	}
+
+	public void setDepartmentId(int DepartmentId) {
+		this.DepartmentId = DepartmentId;
+	}
+
+	public String getDepartmentName() {
+		return departmentName;
+	}
+
+	public void setDepartmentName(String departmentName) {
+		this.departmentName = departmentName;
+	}
+
+}

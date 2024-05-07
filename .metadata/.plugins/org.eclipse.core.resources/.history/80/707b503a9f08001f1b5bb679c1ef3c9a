@@ -1,0 +1,9 @@
+package com.ilp03.entity;
+
+public class TravelExpenses {
+	private int travelExpenseID;
+	private TravelRequests travelRequestID;
+	private int travelExpense;
+	private String expenseDate;
+
+}

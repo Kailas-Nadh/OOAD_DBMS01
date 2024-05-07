@@ -1,0 +1,22 @@
+package com.ilp03.entity;
+
+public abstract class Deposit {
+	
+	private int depositID;
+	private double rateOfInterest;
+	private int maturePeriodYears;
+	private int totalAmount;
+	
+	public abstract void calculateInterest(double principal,double rateOfInterest,int maturePeriod);
+	public abstract void calculateInterest(double installmentAmount,int frequencyOfPayment,double rateOfInterest,int maturePeriod);
+	
+	public Deposit(int depositID, double rateOfInterest, int maturePeriodYears, int totalAmount) {
+		this.depositID = depositID;
+		this.rateOfInterest = rateOfInterest;
+		this.maturePeriodYears = maturePeriodYears;
+		this.totalAmount = totalAmount;
+	}
+	
+	
+
+}

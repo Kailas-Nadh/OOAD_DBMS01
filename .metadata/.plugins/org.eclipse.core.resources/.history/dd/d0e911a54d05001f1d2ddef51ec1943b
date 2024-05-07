@@ -1,0 +1,44 @@
+package com.ilp03.entity;
+
+public class FixedDeposit extends Deposit implements Amount{
+	
+	private double principalAmount;
+
+	public FixedDeposit(int depositID, double rateOfInterest, int maturePeriodYears,
+			double principalAmount) {
+		super(depositID, rateOfInterest, maturePeriodYears);
+		this.principalAmount = principalAmount;
+	}
+
+	public double getPrincipalAmount() {
+		return principalAmount;
+	}
+
+
+
+	public void PrincipalAmount(double principalAmount) {
+		this.principalAmount = principalAmount;
+	}
+
+
+
+	@Override
+	public void calculateInterest(double principal, double rateOfInterest, int maturePeriod) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void calculateInterest(double installmentAmount, int frequencyOfPayment, double rateOfInterest,
+			int maturePeriod) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void calculateAmount() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

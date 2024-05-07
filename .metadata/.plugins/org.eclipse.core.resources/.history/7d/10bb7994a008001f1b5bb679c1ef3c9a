@@ -1,0 +1,33 @@
+package com.ilp03.entity;
+
+public class Accomodations {
+	private int accomodationID;
+	private TravelRequests travelRequestID;
+	private Hotels hotelID;
+	private String checkinDate;
+	private String checkoutDate;
+	private int accomodationExpense;
+	private Employees createdBy;
+	private Employees updatedBy;
+	private String createdDate;
+	private String updatedDate;
+	
+	public Accomodations(int accomodationID, TravelRequests travelRequestID, Hotels hotelID, String checkinDate,
+			String checkoutDate, int accomodationExpense, Employees createdBy, Employees updatedBy, String createdDate,
+			String updatedDate) {
+		this.accomodationID = accomodationID;
+		this.travelRequestID = travelRequestID;
+		this.hotelID = hotelID;
+		this.checkinDate = checkinDate;
+		this.checkoutDate = checkoutDate;
+		this.accomodationExpense = accomodationExpense;
+		this.createdBy = createdBy;
+		this.updatedBy = updatedBy;
+		this.createdDate = createdDate;
+		this.updatedDate = updatedDate;
+	}
+	
+	
+	
+
+}

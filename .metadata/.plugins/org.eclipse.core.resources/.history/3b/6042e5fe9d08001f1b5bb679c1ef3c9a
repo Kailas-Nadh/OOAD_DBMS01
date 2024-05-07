@@ -1,0 +1,29 @@
+package com.ilp03.entity;
+
+public class TravelRequests {
+	
+	private int travelRequestID;
+	private Employees employeeID;
+	private String startDate;
+	private String endDate;
+	private String destination;
+	private String travelPurpose;
+	private String transportationType;
+	private String status;
+	
+	public TravelRequests(int travelRequestID, Employees employeeID, String startDate, String endDate,
+			String destination, String travelPurpose, String transportationType, String status) {
+		this.travelRequestID = travelRequestID;
+		this.employeeID = employeeID;
+		this.startDate = startDate;
+		this.endDate = endDate;
+		this.destination = destination;
+		this.travelPurpose = travelPurpose;
+		this.transportationType = transportationType;
+		this.status = status;
+	}
+	
+	
+	
+
+}

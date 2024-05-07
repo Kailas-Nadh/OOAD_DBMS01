@@ -1,0 +1,46 @@
+package com.ilp03.service;
+
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+import com.ilp03.dao.EmployeesDAO;
+import com.ilp03.dao.TravelExpensesDAO;
+import com.ilp03.entity.EmployeeTravel;
+import com.ilp03.entity.TravelExpenses;
+
+public class EmployeeServiceImpl implements EmployeesService {
+
+	@Override
+	public void getTravelDataBasedOnEmployees() {
+
+		try {
+			Scanner scanner = new Scanner(System.in);
+			Connection connection = EmployeesDAO.getConnection();
+			System.out.println("Enter the employee name:");
+			String employeeFirstName = scanner.nextLine();
+			ArrayList<TravelExpenses> employeeExpensesList = TravelExpensesDAO.getTravelExpenseDataBasedOnEmployees(connection,employeeFirstName);
+			System.out.println(
+					"First name:\tLast Name:\tDept Name:\tDestination:\tTravel Purpose:\tTransportation Type:\tStart Date:\tEnd Date:\tHotel name:\tCheck-in:\tCheck-out:\tTravel Expense:\tAccomodation Expense:");
+			for (TravelExpenses travelExpenses : employeeExpensesList) {
+				System.out.println(travelExpenses.getTravelRequestID().getEmployeeID().getDepartmentID() + "\t\t"
+						+ travelExpenses.getEmployees().getEmployeeLastName() + "\t"
+						+ travelExpenses.getDepartments().getDepartmentName() + "\t"
+						+ travelExpenses.getTravelRequests().getDestination() + "\t"
+						+ travelExpenses.getTravelRequests().getTravelPurpose() + "\t"
+						+ travelExpenses.getTravelRequests().getTransportationType() + "\t"
+						+ travelExpenses.getTravelRequests().getStartDate() + "\t"
+						+ travelExpenses.getTravelRequests().getEndDate() + "\t" + travelExpenses.getHotels().getHotelName()
+						+ "\t" + travelExpenses.getAccomodations().getCheckinDate() + "\t"
+						+ travelExpenses.getAccomodations().getCheckoutDate() + "\t"
+						+ travelExpenses.getTravelExpenses().getTravelExpense() + "\t"
+						+ travelExpenses.getAccomodations().getAccomodationExpense());
+			}
+			connection.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+
+}

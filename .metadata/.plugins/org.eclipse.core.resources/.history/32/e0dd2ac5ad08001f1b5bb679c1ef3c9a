@@ -1,0 +1,14 @@
+package com.ilp03.entity;
+
+public class EmployeeTravel {
+	
+	private Departments departments;
+	private Hotels hotels;
+	private Employees employees;
+	private TravelRequests travelRequests;
+	private TravelExpenses travelExpenses;
+	private Accomodations accomodations;
+	
+	
+
+}

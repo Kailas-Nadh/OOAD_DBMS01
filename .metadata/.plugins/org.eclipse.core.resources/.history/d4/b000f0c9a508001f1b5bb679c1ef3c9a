@@ -1,0 +1,89 @@
+package com.ilp03.dao;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
+import com.ilp03.entity.Account;
+import com.ilp03.entity.Customer;
+import com.ilp03.entity.Departments;
+import com.ilp03.entity.Employees;
+import com.ilp03.entity.Product;
+
+public class EmployeesDAO {
+
+	public static Connection getConnection() {
+		String connectionString = "jdbc:mysql://localhost:3306/employeetravel_db?useSSL=false";
+		String userName = "root";
+		String password = "Hiroshima@1945";
+		Connection connection = null;
+
+		try {
+			connection = DriverManager.getConnection(connectionString, userName, password);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return connection;
+	}
+
+	public static void closeConnection(Connection connection) {
+		try {
+			connection.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	public static ArrayList getTravelDataBasedOnEmployees(Connection connection, String employeeName) {
+
+		ArrayList accountList = new ArrayList();
+		try {
+			PreparedStatement preparedStatement = connection.prepareStatement(
+					"SELECT E.employee_first_name,E.employee_last_name,D.dept_name,TR.destination,TR.travel_purpose,TR.transportation_type,TR.start_date,TR.end_date,H.hotel_name,A.checkin_date,A.checkout_date,TE.travel_expense,A.accomodation_expense,TE.travel_expense+A.accomodation_expense AS total_expenses FROM employees AS E INNER JOIN departments AS D ON E.dept_id = D.dept_id INNER JOIN travel_requests AS TR ON E.employee_id = TR.employee_id INNER JOIN travel_expenses AS TE ON TR.travel_request_id = TE.travel_request_id INNER JOIN accomodations AS A ON TR.travel_request_id = A.travel_request_id INNER JOIN hotels AS H ON A.hotel_id = H.hotel_id where E.employee_first_name=?");
+			preparedStatement.setString(1, employeeName);
+			ResultSet resultSet = preparedStatement.executeQuery();
+			while (resultSet.next()) {
+				int departmentID = resultSet.getInt("dept_id");
+				String departmentName = resultSet.getString("dept_name");
+				Departments departments = new Departments(departmentID,departmentName);
+				
+				int employeeID = resultSet.getInt("employee_id");
+				String employeeFirstName = resultSet.getString("employee_first_name");
+				String employeeLastName = resultSet.getString("employee_last_name");
+				long phoneNumber = resultSet.getLong("employee_phnumber");
+				String employeeCreatedDate = resultSet.getString("created_date");
+				String employeeUpdatedDate = resultSet.getString("updated_date");
+				Employees employees = new Employees(employeeID,employeeFirstName,employeeLastName,phoneNumber,departments,employees,employees,employeeCreatedDate,employeeUpdatedDate);
+				
+
+				int customerID = resultSet.getInt(1);
+				String customerFirstName = resultSet.getString(2);
+				String customerLastName = resultSet.getString(3);
+				String address = resultSet.getString(4);
+				long phNumber = resultSet.getLong(5);
+				Customer customer = new Customer(customerID, customerFirstName, customerLastName, address, phNumber);
+
+				int productID = resultSet.getInt(9);
+				String fetchedProductName = resultSet.getString(11);
+				Product product = new Product(productID, fetchedProductName);
+
+				Account account = new Account(accountID, accountNumber, customer, product);
+
+
+				accountList.add(departments,employees);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		return accountList;
+
+	}
+
+}

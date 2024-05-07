@@ -1,0 +1,62 @@
+package com.ilp03.entity;
+
+public class RecurringDeposit extends Deposit implements Amount{
+	
+	private double installmentAmount;
+	private int frequencyOfPayment;
+
+	public RecurringDeposit(int depositID, double rateOfInterest, int maturePeriodYears, int totalAmount,
+			double installmentAmount, int frequencyOfPayment) {
+		super(depositID, rateOfInterest, maturePeriodYears, totalAmount);
+		this.installmentAmount = installmentAmount;
+		this.frequencyOfPayment = frequencyOfPayment;
+	}
+	
+	
+
+	public double getInstallmentAmount() {
+		return installmentAmount;
+	}
+
+
+
+	public void setInstallmentAmount(double installmentAmount) {
+		this.installmentAmount = installmentAmount;
+	}
+
+
+
+	public int getFrequencyOfPayment() {
+		return frequencyOfPayment;
+	}
+
+
+
+	public void setFrequencyOfPayment(int frequencyOfPayment) {
+		this.frequencyOfPayment = frequencyOfPayment;
+	}
+
+
+
+	@Override
+	public void calculateInterest(double principal, double rateOfInterest, int maturePeriod) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void calculateInterest(double installmentAmount, int frequencyOfPayment, double rateOfInterest,
+			int maturePeriod) {
+		// TODO Auto-generated method stub
+
+	}
+
+
+
+	@Override
+	public void calculateAmount() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

@@ -1,0 +1,35 @@
+package com.ilp03.utility;
+
+import com.ilp03.service.EmployeeServiceImpl;
+import com.ilp03.service.EmployeesService;
+
+public class EmployeeTravelUtility {
+
+	public static void main(String[] args) {
+		// EmployeesService employeeService = new EmployeeServiceImpl();
+		// employeeService.getTravelDataBasedOnEmployees();
+		char continueQuery = 'Y';
+		Scanner scanner = new Scanner(System.in);
+		EmployeeDetailsImpl employeeDetails = new EmployeeDetailsImpl();
+		do {
+			System.out.println(
+					"Choose 1.Insert values into Employee table,2.Display Employee assessment on a particular program");
+			int choice = scanner.nextInt();
+			switch (choice) {
+			case 1:
+				employeeDetails.insertIntoEmployees();
+				break;
+			case 2:
+				employeeDetails.getEmployeeBasedOnProgram();
+				break;
+			default:
+				System.out.println("Invalid Choice");
+				break;
+			}
+			System.out.println("Continue doing query (Y/N)");
+			continueQuery = scanner.next().charAt(0);
+		} while (continueQuery == 'Y');
+
+	}
+
+}

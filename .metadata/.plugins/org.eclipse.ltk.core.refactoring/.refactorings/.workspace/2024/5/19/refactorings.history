@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename Java project &apos;ILP_03_DatabaseConnectivity_Assignment_v5&apos; to &apos;ILP_03_DatabaseConnectivity_Employee_Travel&apos;&#x0D;&#x0A;- Original element: &apos;ILP_03_DatabaseConnectivity_Assignment_v5&apos;&#x0D;&#x0A;- Renamed element: &apos;ILP_03_DatabaseConnectivity_Assignment_v5&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename Java project &apos;ILP_03_DatabaseConnectivity_Assignment_v5&apos;" flags="7" id="org.eclipse.jdt.ui.rename.java.project" input="=ILP_03_DatabaseConnectivity_Assignment_v5" name="ILP_03_DatabaseConnectivity_Employee_Travel" references="true" stamp="1715061338168" version="1.0"/>
+</session>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item key="wrap" value="true"/>
+		<item key="casesensitive" value="false"/>
+		<item key="wholeword" value="false"/>
+		<item key="incremental" value="false"/>
+		<item key="isRegEx" value="false"/>
+		<item key="selection" value="null"/>
+		<list key="findhistory">
+			<item value="null"/>
+			<item value="productName"/>
+			<item value="Code"/>
+			<item value="secondHighest"/>
+			<item value="max"/>
+			<item value="highestSponsorshipAmount"/>
+			<item value="employeeName"/>
+			<item value="year"/>
+			<item value="highestYearposition"/>
+			<item value="long"/>
+			<item value="Customer ID"/>
+			<item value="CustomerID"/>
+			<item value="customerID"/>
+		</list>
+		<list key="replacehistory">
+			<item value=""/>
+			<item value="Name"/>
+			<item value="secondlowest"/>
+			<item value="min"/>
+			<item value="lowestSponsorshipAmount"/>
+			<item value="collegeName"/>
+			<item value="sponsorshipAmount"/>
+			<item value="highestSponsorshipAmount"/>
+			<item value="double"/>
+			<item value="Account Number"/>
+			<item value="accountNumber"/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="806"/>
+		<item key="DIALOG_Y_ORIGIN" value="425"/>
+		<item key="DIALOG_WIDTH" value="511"/>
+		<item key="DIALOG_HEIGHT" value="523"/>
+		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-18|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
+	</section>
+</section>

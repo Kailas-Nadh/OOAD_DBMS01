@@ -1,0 +1,66 @@
+package com.ilp03.service;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+import com.ilp03.entity.Account;
+import com.ilp03.entity.Deposit;
+import com.ilp03.entity.FixedDeposit;
+import com.ilp03.entity.RecurringDeposit;
+
+public class DepositService {
+
+	public static Deposit createDeposit(int choice) {
+
+		Deposit deposit = null;
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Enter Deposit ID:");
+		int depositID = scanner.nextInt();
+		System.out.println("Enter Rate of Interest:");
+		double rateOfInterest = scanner.nextDouble();
+		System.out.println("Enter Mature Period:");
+		int maturePeriodYears = scanner.nextInt();
+
+		if (choice == 1) {
+			System.out.println("Enter Principal Amount:");
+			double principal = scanner.nextDouble();
+			deposit = new FixedDeposit(depositID, rateOfInterest, maturePeriodYears, principal);
+			// deposit.withdraw();
+			// deposit.deposit();
+
+		} else if (choice == 2) {
+			System.out.println("Enter installment amount:");
+			double installmentAmount = scanner.nextDouble();
+			System.out.println("Enter number of payments to be done in a year:");
+			int frequencyOfPayment = scanner.nextInt();
+			deposit = new RecurringDeposit(depositID, rateOfInterest, maturePeriodYears, installmentAmount,
+					frequencyOfPayment);
+		}
+
+		return deposit;
+	}
+
+	public static void displayAllDeposit(ArrayList<Deposit> depositList) {
+
+		for (Deposit deposit : depositList) {
+			if (deposit instanceof FixedDeposit) {
+				FixedDeposit fixedDeposit = (FixedDeposit) deposit;
+				System.out.println("Deposit Type:"+"\t"+"Deposit ID:"+"\t"+"Principal Amount"+"\t"+"Rate of Interest:"+"\t"+"Mature Period:");
+				System.out.println("Fixed Deposit"+"\t"+deposit.getDepositID()+"       "+deposit.getAccountName()+"        "+deposit.getAccountBalance());		
+				//displayDeposit(deposit, principal, gstNo);
+			} else if (deposit instanceof RecurringDeposit) {
+				RecurringDeposit recurringDeposit = (RecurringDeposit) deposit;
+				System.out.println("Account Code"+"     "+"Account Name"+"     "+"Account Balance");
+				System.out.println(deposit.getAccountCode()+"       "+deposit.getAccountName()+"        "+deposit.getAccountBalance());
+				//displayDeposit(account, roi, gstNo);
+			}
+
+		}
+	}
+	
+	public static void displayDeposit(Deposit deposit,String roi,String gstNo) {
+		System.out.println("Account Code"+"     "+"Account Name"+"     "+"Account Balance");
+		System.out.println(deposit.getAccountCode()+"       "+deposit.getAccountName()+"        "+deposit.getAccountBalance());		
+	}
+
+}

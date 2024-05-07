@@ -1,0 +1,15 @@
+package com.ilp03.entity;
+
+public class Employees {
+	private int employeeID;
+	private String employeeFirstName;
+	private String employeeLastName;
+	private long phoneNumber;
+	private Departments departmentId;
+	private Employees created
+	
+	
+
+	
+
+}

@@ -1,0 +1,9 @@
+package com.ilp03.entity;
+
+public interface Amount {
+	
+	public void calculateAmount(double principal, double rateOfInterest, int maturePeriod);
+	public void calculateAmount( double rateOfInterest, int maturePeriod);
+
+
+}

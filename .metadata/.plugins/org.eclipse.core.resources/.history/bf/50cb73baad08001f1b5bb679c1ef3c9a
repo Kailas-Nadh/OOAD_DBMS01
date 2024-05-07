@@ -1,0 +1,8 @@
+package com.ilp03.entity;
+
+public class EmployeeTravel {
+	
+	private Accomodations accomodations;
+	
+
+}

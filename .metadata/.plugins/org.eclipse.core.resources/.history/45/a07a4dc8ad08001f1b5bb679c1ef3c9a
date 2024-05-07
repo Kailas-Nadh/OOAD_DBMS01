@@ -1,0 +1,26 @@
+package com.ilp03.entity;
+
+public class EmployeeTravel {
+	
+	private Departments departments;
+	private Hotels hotels;
+	private Employees employees;
+	private TravelRequests travelRequests;
+	private TravelExpenses travelExpenses;
+	private Accomodations accomodations;
+	public EmployeeTravel(Departments departments, Hotels hotels, Employees employees, TravelRequests travelRequests,
+			TravelExpenses travelExpenses, Accomodations accomodations) {
+		super();
+		this.departments = departments;
+		this.hotels = hotels;
+		this.employees = employees;
+		this.travelRequests = travelRequests;
+		this.travelExpenses = travelExpenses;
+		this.accomodations = accomodations;
+	}
+	
+	
+	
+	
+
+}

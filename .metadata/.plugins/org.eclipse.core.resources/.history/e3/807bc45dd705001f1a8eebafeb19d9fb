@@ -1,0 +1,7 @@
+package com.ilp03.entity;
+
+public interface FineRD {
+	
+	public void calculateRDFineAmount(int delayMonths);
+
+}
